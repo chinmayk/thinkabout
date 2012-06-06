@@ -636,6 +636,7 @@
 
       AppView.prototype.goHome = function() {
         this.$('#room-list').show();
+        this.$('#panel-list').empty().hide();
         this.render();
         return false;
       };
