@@ -247,7 +247,7 @@ $ ->
 						# this.$(@el).html( @template(@model.toJSON()) )
 						# this.$el.html @template @model.toJSON()
 						this.$el.empty()
-						this.$el.html('<a href="#">Home</a>')
+						# this.$el.html('')
 						
 						nextToAssign = 1
 						_.each @model.get('panels'), (panel) =>

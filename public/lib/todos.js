@@ -296,7 +296,6 @@
         var nextToAssign;
         var _this = this;
         this.$el.empty();
-        this.$el.html('<a href="#">Home</a>');
         nextToAssign = 1;
         _.each(this.model.get('panels'), function(panel) {
           if (panel['order'] === nextToAssign) {
