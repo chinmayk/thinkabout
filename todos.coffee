@@ -424,6 +424,7 @@ $ ->
 
 						Todos.fetch()
 						Rooms.fetch()
+						@input.focus()
 
 				# Rerendering the app means we show all the rooms, and then the statistics etc
 				render: =>

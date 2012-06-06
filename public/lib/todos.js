@@ -503,7 +503,8 @@
         Rooms.bind("reset", this.addAllRooms);
         Rooms.bind("all", this.addAllRooms);
         Todos.fetch();
-        return Rooms.fetch();
+        Rooms.fetch();
+        return this.input.focus();
       };
 
       AppView.prototype.render = function() {
