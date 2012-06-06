@@ -533,6 +533,7 @@ $ ->
 
 				goHome: () ->
 					this.$('#room-list').show()
+					this.$('#panel-list').hide()
 					@render()
 					return false
 					
