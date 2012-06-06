@@ -39,7 +39,7 @@ html {
     color: #333333;
   }
 
-#todoapp {
+/*#todoapp {
   width: 480px;
   margin: 0 auto 40px;
   background: white;
@@ -48,7 +48,38 @@ html {
   -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 5px 6px 0;
   -o-box-shadow: rgba(0, 0, 0, 0.2) 0 5px 6px 0;
   box-shadow: rgba(0, 0, 0, 0.2) 0 5px 6px 0;
+}*/
+.room {
+	min-height: 150px !important;
+	border: dashed 2px gray;
+	margin: 20px 20px 20px 30px;
 }
+
+.panel {
+	min-height: 300px !important;
+	border: dashed 2px red;
+	margin: 20px;
+}
+
+.hover {
+	border: solid;
+}
+
+
+
+.placeholder {
+	text-align: center;
+	padding-top: 50px;
+}
+
+.edit {
+	display: none;
+}
+
+.room-title {
+	font-size: 24pt;
+}
+
   #todoapp h1 {
     font-size: 36px;
     font-weight: bold;
@@ -68,23 +99,14 @@ html {
 #create-todo {
   position: relative;
 }
-  #create-todo input {
-    width: 466px;
-    font-size: 24px;
+  #create-todo textarea {
+    width: 95%;
+    font-size: 12pt;
     font-family: inherit;
-    line-height: 1.4em;
-    border: 0;
-    outline: none;
-    padding: 6px;
-    border: 1px solid #999999;
-    -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0 inset;
-    -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0 inset;
-    -o-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0 inset;
-    box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0 inset;
+		min-height: 100px;
+		margin-top:10px;
   }
-    #create-todo input::-webkit-input-placeholder {
-      font-style: italic;
-    }
+
   #create-todo span {
     position: absolute;
     z-index: 999;
@@ -95,13 +117,17 @@ html {
 
 #todo-list {
   margin-top: 10px;
+		max-height: 600px !important;
+		display: block;
+		overflow: scroll;
 }
-  #todo-list li {
+  .note-list li {
     padding: 12px 20px 11px 0;
     position: relative;
-    font-size: 24px;
-    line-height: 1.1em;
+    font-size: 12pt;
     border-bottom: 1px solid #cccccc;
+		cursor: hand;
+		background: white;
   }
     #todo-list li:after {
       content: "\0020";
@@ -147,17 +173,24 @@ html {
     text-decoration: line-through;
     color: #777777;
   }
-  #todo-list .todo-destroy {
-    position: absolute;
+  .note-list .todo-destroy {
+ 		position: absolute;
     right: 5px;
     top: 14px;
     display: none;
     cursor: pointer;
     width: 20px;
     height: 20px;
-    background: url(destroy.png) no-repeat 0 0;
+		display: none;
+/*    background: url(destroy.png) no-repeat 0 0;*/
   }
-    #todo-list li:hover .todo-destroy {
+
+h1#app-title {
+	font-family: 'Shadows Into Light', cursive;
+	 font-weight: 400; 
+	cursor: hand;
+}
+    .note-list li:hover .todo-destroy {
       display: block;
     }
     #todo-list .todo-destroy:hover {
@@ -166,8 +199,9 @@ html {
 
 #todo-stats {
   *zoom: 1;
-  margin-top: 10px;
+/*  margin-top: 10px;*/
   color: #777777;
+	margin-bottom: -10px;
 }
   #todo-stats:after {
     content: "\0020";
@@ -205,20 +239,6 @@ html {
   text-shadow: rgba(255, 255, 255, 0.8) 0 1px 0;
   text-align: center;
 }
-  #instructions a {
-    color: #336699;
-  }
-
-#credits {
-  width: 520px;
-  margin: 30px auto;
-  color: #999;
-  text-shadow: rgba(255, 255, 255, 0.8) 0 1px 0;
-  text-align: center;
-}
-  #credits a {
-    color: #888;
-  }
 
 
 /*
