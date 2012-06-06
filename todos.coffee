@@ -384,7 +384,7 @@ $ ->
 				loadDetailView: (e) ->
 					$('#room-list').hide(500).empty()
 					view = new RoomView model: @model
-					$('#panel-list').html view.render().$el
+					$('#panel-list').show().html view.render().$el
 					console.log "rendering details done"
 					
 		### The Application ###
@@ -533,7 +533,7 @@ $ ->
 
 				goHome: () ->
 					this.$('#room-list').show()
-					this.$('#panel-list').empty().hide()
+					this.$('#panel-list').hide()
 					@render()
 					return false
 					

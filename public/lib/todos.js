@@ -452,7 +452,7 @@
         view = new RoomView({
           model: this.model
         });
-        $('#panel-list').html(view.render().$el);
+        $('#panel-list').show().html(view.render().$el);
         return console.log("rendering details done");
       };
 
@@ -636,7 +636,7 @@
 
       AppView.prototype.goHome = function() {
         this.$('#room-list').show();
-        this.$('#panel-list').empty().hide();
+        this.$('#panel-list').hide();
         this.render();
         return false;
       };
