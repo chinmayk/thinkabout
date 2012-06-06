@@ -232,6 +232,7 @@ $ ->
 						"dragover .panel"						:	"handleDragHover"
 						"dragleave .panel"					: "handleDragBlur"
 
+
 				template: _.template $('#room-detail-template').html()
 
 				initialize: ->
@@ -246,6 +247,8 @@ $ ->
 						# this.$(@el).html( @template(@model.toJSON()) )
 						# this.$el.html @template @model.toJSON()
 						this.$el.empty()
+						this.$el.html('<a href="#">Home</a>')
+						
 						nextToAssign = 1
 						_.each @model.get('panels'), (panel) =>
 							if panel['order'] is nextToAssign
@@ -292,6 +295,7 @@ $ ->
 					e = e.originalEvent if e.originalEvent?
 					e.dataTransfer.effectAllowed = "move"
 					console.log "drag started"
+					
 					
 				# showRoom: (e) ->
 				# 	$('#room-list').hide(500).empty()
@@ -403,6 +407,7 @@ $ ->
 						"keyup #new-todo"			: "showTooltip",
 						"click .todo-clear a" : "clearCompleted"
 						"click .addRoom"			: "addRoom"
+						"click #app-title"					: "goHome"
 				# At initialization we bind to the relevant events on the `Todos`
 				# collection, when items are added or changed. Kick things off by
 				# loading any preexisting todos that might be saved in *localStorage*.
@@ -526,7 +531,12 @@ $ ->
 					return if e.keyCode isnt 13
 					Rooms.create {name: $(e.target).val(), order: $(e.target).parent().parent().index() + 1, done: false}
 
+				goHome: () ->
+					this.$('#room-list').show()
+					@render()
+					return false
 					
+				
 					
 
 		# Create our global collection of **Todos**.

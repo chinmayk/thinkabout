@@ -57,7 +57,7 @@ html {
 
 .panel {
 	min-height: 300px !important;
-	border: dashed 2px red;
+/*	border: dashed 2px red;*/
 	margin: 20px;
 }
 
@@ -187,9 +187,19 @@ html {
 
 h1#app-title {
 	font-family: 'Shadows Into Light', cursive;
-	 font-weight: 400; 
+	font-weight: 400; 
 	cursor: hand;
+	color: black;
+	font-size: 24pt;
+	margin-left: 20px;
+	margin-bottom: 0;
 }
+
+.navbar {
+	height: 30px;
+}
+
+
     .note-list li:hover .todo-destroy {
       display: block;
     }

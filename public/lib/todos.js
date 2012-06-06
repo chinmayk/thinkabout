@@ -296,6 +296,7 @@
         var nextToAssign;
         var _this = this;
         this.$el.empty();
+        this.$el.html('<a href="#">Home</a>');
         nextToAssign = 1;
         _.each(this.model.get('panels'), function(panel) {
           if (panel['order'] === nextToAssign) {
@@ -491,7 +492,8 @@
         "keypress .room-input": "createRoomOnEnter",
         "keyup #new-todo": "showTooltip",
         "click .todo-clear a": "clearCompleted",
-        "click .addRoom": "addRoom"
+        "click .addRoom": "addRoom",
+        "click #app-title": "goHome"
       };
 
       AppView.prototype.initialize = function() {
@@ -630,6 +632,12 @@
           order: $(e.target).parent().parent().index() + 1,
           done: false
         });
+      };
+
+      AppView.prototype.goHome = function() {
+        this.$('#room-list').show();
+        this.render();
+        return false;
       };
 
       return AppView;
